@@ -17,4 +17,4 @@ The ideas that will be covered are:
 - Making the most of what is available
 - Maximizing the effectiveness of data
 
-These are not the definitive and final points that make or break the data, but more of a general guideline of best practices and a grasp of positive though process when working with such tasks. In the coming chapters, we will go further into detail regarding the ideas listed above.
+These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of positive thought process when working with such tasks. In the coming chapters, I will go further into detail regarding the ideas listed above.
