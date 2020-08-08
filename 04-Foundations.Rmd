@@ -1,8 +1,12 @@
+
+
 ```{r, echo=FALSE}
 knitr::opts_chunk$set(error = TRUE)
 ```
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+```{r, echo=FALSE, message='hide', warning=FALSE}
 Sys.setlocale("LC_CTYPE","arabic")
 library(readxl)
 library(knitr)
@@ -15,6 +19,7 @@ workfile %>% mutate(incident_date = date(acci_time)) %>%
     count(Incident_month)
 workfile <- workfile %>% separate(acci_name, c("Incident_type", "severity"), sep = "- |-")
 ```
+
 # Foundations
 
 ## Standards

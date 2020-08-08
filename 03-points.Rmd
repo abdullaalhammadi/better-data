@@ -6,7 +6,7 @@ In this chapter, I will explain why these aspects of data are crucial to providi
 
 Relevance in this context is essentially how fitting the data is with your current goals. For example, in our case, the data is relevant because we are looking to explore the data to find any interesting relationships or occurrences that may help us come up with solutions or insights to improve road safety. This is the data we currently have.
 
-```{r, echo=FALSE, message=FALSE, warning=FALSE}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 Sys.setlocale("LC_CTYPE","arabic")
 library(readxl)
 library(knitr)
@@ -24,7 +24,7 @@ In our case, the data is relevant because we are working with what is available 
 ## Reliability
 
 Reliability is how much can the data be trusted to provide accurate and meaningful results. In our case for example, the data passed the initial reliability test, which is tests the integrity of the data. I wrote my own script to determine whether there were any inconsistencies between the cells.
-```{r}
+```{r, echo=TRUE}
 check_doubles <- function(x){
 
   x <- x %>% 
@@ -43,13 +43,13 @@ library(lubridate)
 library(tidyverse)
 ```
 
-```{r}
+```{r, echo=TRUE}
 workfile %>% mutate(date = date(acci_time)) %>% count(is.na(date) == TRUE)
 ```
 
 We can see that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, we could have used a weather API to get the weather conditions on the dates, and see the effect that the weather conditions might have on road safety. Also there is another interesting observation.
 
-```{r}
+```{r, echo=TRUE}
 workfile %>% mutate(incident_date = date(acci_time)) %>%
     mutate(incident_day = day(acci_time), Incident_month = month(acci_time)) %>%
     group_by(Incident_month) %>% count(incident_day) %>%
@@ -78,3 +78,4 @@ Now, it is possible to explore the relationships between the severity of the inc
 ## Consistency
 
 This is a very simple aspect, but is quite often overlooked. Having specific guidelines and standards to follow when collecting and using data is important to have consistent results. For example, if we collect data but with different variables next year, it can be difficult to track and compare changes between now and then. Therefore, a solid framework that allows for consistent results is important to maximize the usefulness of the data.
+
