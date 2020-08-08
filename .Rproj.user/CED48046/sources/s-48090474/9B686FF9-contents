@@ -1,0 +1,97 @@
+--- 
+title: "Better Data and Better Results"
+author: "Abdulla Alhammadi | عبدالله الحمادي"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+---
+# Introduction {#intro}
+
+## The Purpose
+
+I created this project as a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, we will look into developing the standards for collecting public data, and how to make the most with what we currently have to create better insights. In this case, for public policy.
+
+## The Case
+
+The case at hand is an example of public data that is available on [Bayanat.ae](https://bayanat.ae). It is a dataset that includes data about traffic incidents that were reported to the Dubai Police operation contact center. We will be using this dataset to look for insights on how to improve road safety. In the following pages, I will explain why I chose this dataset and how it is a good example for the ideas that will be mentioned in the following chapters.
+
+<!--chapter:end:index.Rmd-->
+
+# The Dataset
+
+## Why this dataset?
+
+I chose this data set specifically because it covers most of the ideas that I will bring up. Do note that this dataset is **not** a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
+
+## What will be covered?
+
+The ideas that will be covered are: 
+
+- The 4 "key" aspects of data, which are: 
+    - Relevance
+    - Reliability
+    - Coverage
+    - Consistency
+- Setting the right standards
+- Making the most of what is available
+- Maximizing the effectiveness of data
+
+These are not the definitive and final points that make or break the data, but more of a general guideline of best practices and a grasp of positive though process when working with such tasks. In the coming chapters, we will go further into detail regarding the ideas listed above.
+
+<!--chapter:end:02-literature.Rmd-->
+
+
+# The Key Aspects of Data
+
+Placeholder
+
+
+## Relevance
+## Reliability
+## Coverage
+### Using Technology to Cover More Data
+## Consistency
+
+<!--chapter:end:03-method.Rmd-->
+
+# Foundations
+
+## Standards
+
+Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where we had to create the two columns `Incident_type` and `severity` from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it helps us better identify nominal data, as well as adding a common key for future purposes, such as translation. In this case, we added an ID for severity, in case we would like to manipulate the data later on.
+
+```{r}
+library(tidyverse)
+library(glue)
+workfile
+##dfcount <- workfile %>% count(severity)
+##indexlegend <- dfcount %>% dplyr::select(severity) %>% na.omit() %>% mutate(severity_ID = c(2, 3, 1))
+##indexlegend
+##df <- df %>% left_join(indexlegend)
+##kable(head(df))
+```
+
+## Making the Most out of Things
+
+Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, I would use the packages `httr` and `JSONlite` to import data from various API's such as OpenStreetMap and AccuWeather
+
+<!--chapter:end:04-application.Rmd-->
+
+# Final Words
+
+We have finished a nice book.
+
+<!--chapter:end:05-summary.Rmd-->
+
+`r if (knitr::is_html_output()) '
+# References {-}
+'`
+
+<!--chapter:end:06-references.Rmd-->
+

@@ -1,0 +1,4 @@
+"0","workfile %>% mutate(incident_date = date(acci_time)) %>%"
+"0","    mutate(incident_day = day(acci_time), Incident_month = month(acci_time)) %>%"
+"0","    group_by(Incident_month) %>% count(incident_day) %>%"
+"0","    count(Incident_month)"

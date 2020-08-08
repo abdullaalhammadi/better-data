@@ -1,0 +1,2 @@
+"0","workfile <- workfile %>% separate(acci_name, c(""Incident_type"", ""severity""), sep = ""- |-"")"
+"0","workfile"

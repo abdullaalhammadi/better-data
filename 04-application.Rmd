@@ -1,0 +1,39 @@
+```{r, echo=FALSE}
+knitr::opts_chunk$set(error = TRUE)
+```
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+Sys.setlocale("LC_CTYPE","arabic")
+library(readxl)
+library(knitr)
+library(tidyverse)
+workfile <- read_excel("E:\\Fedora Media Writer\\Miscellanous\\FCSA project-20200806T165957Z-001\\FCSA project\\Work files\\traffic_incidents.xlsx")
+workfile %>% mutate(date = date(acci_time)) %>% count(is.na(date) == TRUE)
+workfile %>% mutate(incident_date = date(acci_time)) %>%
+    mutate(incident_day = day(acci_time), Incident_month = month(acci_time)) %>%
+    group_by(Incident_month) %>% count(incident_day) %>%
+    count(Incident_month)
+workfile <- workfile %>% separate(acci_name, c("Incident_type", "severity"), sep = "- |-")
+```
+# Foundations
+
+## Standards
+
+Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where we had to create the two columns `Incident_type` and `severity` from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it helps us better identify nominal data, as well as adding a common key for future purposes, such as translation. In this case, we added an ID for severity, in case we would like to manipulate the data later on.
+
+```{r, message=FALSE}
+library(tidyverse)
+library(knitr)
+dfcount <- workfile %>% count(severity)
+indexlegend <- dfcount %>% dplyr::select(severity) %>% na.omit() %>% mutate(severity_ID = c(2, 3, 1))
+workfile <- workfile %>% left_join(indexlegend)
+kable(head(workfile))
+```
+
+## Making the Most out of Things
+
+Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, I would would use the packages `httr` and `JSONlite` to import data from various API's such as OpenStreetMap and AccuWeather, and add the data to new variables such as `weather_condition` and `road_feature`. I would use the given coordinates to add road features and assign it to a new variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, I'm able to increase coverage massively.
+
+## Maximizing the effectiveness of data
+
+By setting better standards, and trying to make the most out of what is provided, we were able to maximize the effectiveness of data. Because of that, our data has become much more useful than it has been initially.

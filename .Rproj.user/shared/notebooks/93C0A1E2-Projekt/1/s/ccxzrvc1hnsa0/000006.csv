@@ -1,0 +1,2 @@
+"0","df <- df %>% left_join(indexlegend)"
+"0","kable(head(df))"

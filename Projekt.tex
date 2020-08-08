@@ -1,0 +1,410 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Better Data and Better Results},
+  pdfauthor={Abdulla Alhammadi \textbar{} عبدالله الحمادي},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Better Data and Better Results}
+\author{Abdulla Alhammadi \textbar{} عبدالله الحمادي}
+\date{2020-08-08}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{intro}{%
+\chapter{Introduction}\label{intro}}
+
+\hypertarget{the-purpose}{%
+\section{The Purpose}\label{the-purpose}}
+
+I created this project as a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, we will look into developing the standards for collecting public data, and how to make the most with what we currently have to create better insights. In this case, for public policy.
+
+\hypertarget{the-case}{%
+\section{The Case}\label{the-case}}
+
+The case at hand is an example of public data that is available on \href{https://bayanat.ae}{Bayanat.ae}. It is a dataset that includes data about traffic incidents that were reported to the Dubai Police operation contact center. We will be using this dataset to look for insights on how to improve road safety. In the following pages, I will explain why I chose this dataset and how it is a good example for the ideas that will be mentioned in the following chapters.
+
+\hypertarget{the-dataset}{%
+\chapter{The Dataset}\label{the-dataset}}
+
+\hypertarget{why-this-dataset}{%
+\section{Why this dataset?}\label{why-this-dataset}}
+
+I chose this data set specifically because it covers most of the ideas that I will bring up. Do note that this dataset is \textbf{not} a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
+
+\hypertarget{what-will-be-covered}{%
+\section{What will be covered?}\label{what-will-be-covered}}
+
+The ideas that will be covered are:
+
+\begin{itemize}
+\tightlist
+\item
+  The 4 ``key'' aspects of data, which are:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Relevance
+  \item
+    Reliability
+  \item
+    Coverage
+  \item
+    Consistency
+  \end{itemize}
+\item
+  Setting the right standards
+\item
+  Making the most of what is available
+\item
+  Maximizing the effectiveness of data
+\end{itemize}
+
+These are not the definitive and final points that make or break the data, but more of a general guideline of best practices and a grasp of positive though process when working with such tasks. In the coming chapters, we will go further into detail regarding the ideas listed above.
+
+\hypertarget{the-key-aspects-of-data}{%
+\chapter{The Key Aspects of Data}\label{the-key-aspects-of-data}}
+
+In this chapter, I will explain why these aspects of data are crucial to providing good results.
+
+\hypertarget{relevance}{%
+\section{Relevance}\label{relevance}}
+
+Relevance in this context is essentially how fitting the data is with your current goals. For example, in our case, the data is relevant because we are looking to explore the data to find any interesting relationships or occurrences that may help us come up with solutions or insights to improve road safety. This is the data we currently have.
+
+\begin{verbatim}
+## [1] "Arabic_Saudi Arabia.1256"
+\end{verbatim}
+
+\begin{tabular}{r|l|l|r|r}
+\hline
+acci\_id & acci\_time & acci\_name & acci\_x & acci\_y\\
+\hline
+3545008155 & 2019-06-10 11:59:50 & حادث دهس امراة- بليغ & 25.28002 & 55.35302\\
+\hline
+3545009716 & 2019-06-10 12:04:19 & حادث صدم رصيف- بسيط & 25.25702 & 55.29077\\
+\hline
+3545011689 & 2019-06-10 12:09:48 & حادث صدم جدار- بسيط & 25.17389 & 55.40356\\
+\hline
+3545013868 & 2019-06-10 12:18:18 & حادث ضد مجهول- بسيط & 25.26867 & 55.32277\\
+\hline
+3544995157 & 2019-06-10 11:22:00 & حادث اصطدام بين سيارتين- بسيط & 25.26062 & 55.31896\\
+\hline
+3545003866 & 2019-06-10 11:47:55 & حادث صدم جدار- بسيط & 25.08618 & 55.40152\\
+\hline
+\end{tabular}
+
+In our case, the data is relevant because we are working with what is available and not asking certain questions or setting specific goals by ourselves. To ensure that data is relevant, the entities that collect and provide the data should know what the users of the data are looking for. Collecting random data that may or may not be useful is not an effective way of providing data, since the efforts and resources used to gather and provide such data may be fruitless.
+
+\hypertarget{reliability}{%
+\section{Reliability}\label{reliability}}
+
+Reliability is how much can the data be trusted to provide accurate and meaningful results. In our case for example, the data passed the initial reliability test, which is tests the integrity of the data. I wrote my own script to determine whether there were any inconsistencies between the cells.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{check_doubles <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x)\{}
+
+\NormalTok{  x <-}\StringTok{ }\NormalTok{x }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{group_by}\NormalTok{(acci_id) }\OperatorTok{%>%}\StringTok{ }
+\StringTok{    }\KeywordTok{filter}\NormalTok{(}\KeywordTok{n_distinct}\NormalTok{(acci_name) }\OperatorTok{>}\StringTok{ }\DecValTok{1}\NormalTok{)}
+
+  \ControlFlowTok{if}\NormalTok{(}\KeywordTok{nrow}\NormalTok{(x) }\OperatorTok{>}\StringTok{ }\DecValTok{1}\NormalTok{) \{}
+    \KeywordTok{print}\NormalTok{(x)}
+\NormalTok{  \}}
+    \ControlFlowTok{else} \KeywordTok{print}\NormalTok{(}\StringTok{"There are no inconsistencies between the cells"}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+This is a script that checks that each entry has a unique ID, which ensures that there are no duplicate entries or mismatched entries. However, the data proved to be unreliable because when we checked the completeness of the data, this is what we can see:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{workfile }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{date =} \KeywordTok{date}\NormalTok{(acci_time)) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(}\KeywordTok{is.na}\NormalTok{(date) }\OperatorTok{==}\StringTok{ }\OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   `is.na(date) == TRUE`     n
+##   <lgl>                 <int>
+## 1 FALSE                 10078
+## 2 TRUE                  13743
+\end{verbatim}
+
+We can see that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, we could have used a weather API to get the weather conditions on the dates, and see the effect that the weather conditions might have on road safety. Also there is another interesting observation.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{workfile }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{incident_date =} \KeywordTok{date}\NormalTok{(acci_time)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{incident_day =} \KeywordTok{day}\NormalTok{(acci_time), }\DataTypeTok{Incident_month =} \KeywordTok{month}\NormalTok{(acci_time)) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{group_by}\NormalTok{(Incident_month) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(incident_day) }\OperatorTok{%>%}
+\StringTok{    }\KeywordTok{count}\NormalTok{(Incident_month)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 13 x 2
+## # Groups:   Incident_month [13]
+##    Incident_month     n
+##             <dbl> <int>
+##  1              1     3
+##  2              2     3
+##  3              3     3
+##  4              4     4
+##  5              5     3
+##  6              6     4
+##  7              7     3
+##  8              8     3
+##  9              9     3
+## 10             10     3
+## 11             11     3
+## 12             12     3
+## 13             NA     1
+\end{verbatim}
+
+We can see that the that all the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable.
+
+\hypertarget{coverage}{%
+\section{Coverage}\label{coverage}}
+
+Coverage can be thought of as how much information the data \textbf{\emph{can}} give you. The amount of data that a dataset includes is affected by several factors, including the feasibility of data collection and relevance.
+
+\hypertarget{using-technology-to-cover-more-data}{%
+\subsection{Using Technology to Cover More Data}\label{using-technology-to-cover-more-data}}
+
+In our case, modern technology could have been used to collect much more data, and the collected data could cover a lot of other variables such as the road features(bridge, junction, intersection, etc.), weather conditions (foggy, rainy, etc.), and much more. For example, Dubai Police receives traffic incidents via their mobile app. Meaning that the whole data collection process can be automated, including automatically obtaining the weather conditions on that day through the AccuWeather API, and the road features on the provided coordinates, which could be done through OpenStreetMap for example.
+
+In this dataset, we could've added more coverage by covering the severity of the incidents. We were able to do that by splitting the \texttt{acci\_type} into two columns: \texttt{Incident\_type} and \texttt{severity}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{workfile <-}\StringTok{ }\NormalTok{workfile }\OperatorTok{%>%}\StringTok{ }\KeywordTok{separate}\NormalTok{(acci_name, }\KeywordTok{c}\NormalTok{(}\StringTok{"Incident_type"}\NormalTok{, }\StringTok{"severity"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{"- |-"}\NormalTok{)}
+\NormalTok{workfile}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 23,821 x 6
+##       acci_id acci_time           Incident_type           severity acci_x acci_y
+##         <dbl> <dttm>              <chr>                   <chr>     <dbl>  <dbl>
+##  1 3545008155 2019-06-10 11:59:50 حادث دهس امراة          بليغ       25.3   55.4
+##  2 3545009716 2019-06-10 12:04:19 حادث صدم رصيف           بسيط       25.3   55.3
+##  3 3545011689 2019-06-10 12:09:48 حادث صدم جدار           بسيط       25.2   55.4
+##  4 3545013868 2019-06-10 12:18:18 حادث ضد مجهول           بسيط       25.3   55.3
+##  5 3544995157 2019-06-10 11:22:00 حادث اصطدام بين سيارتين بسيط       25.3   55.3
+##  6 3545003866 2019-06-10 11:47:55 حادث صدم جدار           بسيط       25.1   55.4
+##  7 3544986692 2019-06-10 10:53:35 حادث اصطدام بين سيارتين بسيط       25.2   55.5
+##  8 3544991407 2019-06-10 11:11:04 حادث صدم رصيف           بسيط       25.1   55.4
+##  9 3544994531 2019-06-10 11:19:49 حادث ضد مجهول           بسيط       25.2   55.3
+## 10 3544998937 2019-06-10 11:33:00 حادث صدم دراجة          بسيط       25.1   55.2
+## # ... with 23,811 more rows
+\end{verbatim}
+
+Now, it is possible to explore the relationships between the severity of the incidents and other variables. By increasing the coverage of the data, there are much more insights that can be gathered than before.
+
+\hypertarget{consistency}{%
+\section{Consistency}\label{consistency}}
+
+This is a very simple aspect, but is quite often overlooked. Having specific guidelines and standards to follow when collecting and using data is important to have consistent results. For example, if we collect data but with different variables next year, it can be difficult to track and compare changes between now and then. Therefore, a solid framework that allows for consistent results is important to maximize the usefulness of the data.
+
+\begin{verbatim}
+## [1] "Arabic_Saudi Arabia.1256"
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   `is.na(date) == TRUE`     n
+##   <lgl>                 <int>
+## 1 FALSE                 10078
+## 2 TRUE                  13743
+\end{verbatim}
+
+\begin{verbatim}
+## # A tibble: 13 x 2
+## # Groups:   Incident_month [13]
+##    Incident_month     n
+##             <dbl> <int>
+##  1              1     3
+##  2              2     3
+##  3              3     3
+##  4              4     4
+##  5              5     3
+##  6              6     4
+##  7              7     3
+##  8              8     3
+##  9              9     3
+## 10             10     3
+## 11             11     3
+## 12             12     3
+## 13             NA     1
+\end{verbatim}
+
+\hypertarget{foundations}{%
+\chapter{Foundations}\label{foundations}}
+
+\hypertarget{standards}{%
+\section{Standards}\label{standards}}
+
+Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where we had to create the two columns \texttt{Incident\_type} and \texttt{severity} from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it helps us better identify nominal data, as well as adding a common key for future purposes, such as translation. In this case, we added an ID for severity, in case we would like to manipulate the data later on.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(knitr)}
+\NormalTok{dfcount <-}\StringTok{ }\NormalTok{workfile }\OperatorTok{%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(severity)}
+\NormalTok{indexlegend <-}\StringTok{ }\NormalTok{dfcount }\OperatorTok{%>%}\StringTok{ }\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{(severity) }\OperatorTok{%>%}\StringTok{ }\KeywordTok{na.omit}\NormalTok{() }\OperatorTok{%>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{severity_ID =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{1}\NormalTok{))}
+\NormalTok{workfile <-}\StringTok{ }\NormalTok{workfile }\OperatorTok{%>%}\StringTok{ }\KeywordTok{left_join}\NormalTok{(indexlegend)}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{head}\NormalTok{(workfile))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{tabular}{r|l|l|l|r|r|r}
+\hline
+acci\_id & acci\_time & Incident\_type & severity & acci\_x & acci\_y & severity\_ID\\
+\hline
+3545008155 & 2019-06-10 11:59:50 & حادث دهس امراة & بليغ & 25.28002 & 55.35302 & 3\\
+\hline
+3545009716 & 2019-06-10 12:04:19 & حادث صدم رصيف & بسيط & 25.25702 & 55.29077 & 1\\
+\hline
+3545011689 & 2019-06-10 12:09:48 & حادث صدم جدار & بسيط & 25.17389 & 55.40356 & 1\\
+\hline
+3545013868 & 2019-06-10 12:18:18 & حادث ضد مجهول & بسيط & 25.26867 & 55.32277 & 1\\
+\hline
+3544995157 & 2019-06-10 11:22:00 & حادث اصطدام بين سيارتين & بسيط & 25.26062 & 55.31896 & 1\\
+\hline
+3545003866 & 2019-06-10 11:47:55 & حادث صدم جدار & بسيط & 25.08618 & 55.40152 & 1\\
+\hline
+\end{tabular}
+
+\hypertarget{making-the-most-out-of-things}{%
+\section{Making the Most out of Things}\label{making-the-most-out-of-things}}
+
+Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, I would would use the packages \texttt{httr} and \texttt{JSONlite} to import data from various API's such as OpenStreetMap and AccuWeather, and add the data to new variables such as \texttt{weather\_condition} and \texttt{road\_feature}. I would use the given coordinates to add road features and assign it to a new variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, I'm able to increase coverage massively.
+
+\hypertarget{maximizing-the-effectiveness-of-data}{%
+\section{Maximizing the effectiveness of data}\label{maximizing-the-effectiveness-of-data}}
+
+By setting better standards, and trying to make the most out of what is provided, we were able to maximize the effectiveness of data. Because of that, our data has become much more useful than it has been initially.
+
+\hypertarget{final-words}{%
+\chapter{Final Words}\label{final-words}}
+
+Thank you for reading. All of the code used here is my own personal work. I hope you have a better understanding about how important public data is, and how better data can help improve insights significantly.
+
+  \bibliography{book.bib,packages.bib}
+
+\end{document}

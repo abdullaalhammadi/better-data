@@ -1,0 +1,6 @@
+"0","library(tidyverse)"
+"0","library(knitr)"
+"0","dfcount <- workfile %>% count(severity)"
+"0","indexlegend <- dfcount %>% dplyr::select(severity) %>% na.omit() %>% mutate(severity_ID = c(2, 3, 1))"
+"0","workfile <- workfile %>% left_join(indexlegend)"
+"0","kable(head(workfile))"
