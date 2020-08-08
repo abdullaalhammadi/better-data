@@ -1,1 +1,3 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+This is a bookdown that I wrote myself on the importance of improving data, and examples on how data can be improved upon. I specifically focus on public data, but many ideas are applicable in many other cases as well. Do read it if you are interested.
+
+https://abdullaalhammadi.github.io/better-data/
