@@ -293,26 +293,27 @@ In this dataset, we could've added more coverage by covering the severity of the
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{workfile <-}\StringTok{ }\NormalTok{workfile }\OperatorTok{%>%}\StringTok{ }\KeywordTok{separate}\NormalTok{(acci_name, }\KeywordTok{c}\NormalTok{(}\StringTok{"Incident_type"}\NormalTok{, }\StringTok{"severity"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{"- |-"}\NormalTok{)}
-\NormalTok{workfile}
+\KeywordTok{kable}\NormalTok{(}\KeywordTok{head}\NormalTok{(workfile))}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## # A tibble: 23,821 x 6
-##       acci_id acci_time           Incident_type           severity acci_x acci_y
-##         <dbl> <dttm>              <chr>                   <chr>     <dbl>  <dbl>
-##  1 3545008155 2019-06-10 11:59:50 حادث دهس امراة          بليغ       25.3   55.4
-##  2 3545009716 2019-06-10 12:04:19 حادث صدم رصيف           بسيط       25.3   55.3
-##  3 3545011689 2019-06-10 12:09:48 حادث صدم جدار           بسيط       25.2   55.4
-##  4 3545013868 2019-06-10 12:18:18 حادث ضد مجهول           بسيط       25.3   55.3
-##  5 3544995157 2019-06-10 11:22:00 حادث اصطدام بين سيارتين بسيط       25.3   55.3
-##  6 3545003866 2019-06-10 11:47:55 حادث صدم جدار           بسيط       25.1   55.4
-##  7 3544986692 2019-06-10 10:53:35 حادث اصطدام بين سيارتين بسيط       25.2   55.5
-##  8 3544991407 2019-06-10 11:11:04 حادث صدم رصيف           بسيط       25.1   55.4
-##  9 3544994531 2019-06-10 11:19:49 حادث ضد مجهول           بسيط       25.2   55.3
-## 10 3544998937 2019-06-10 11:33:00 حادث صدم دراجة          بسيط       25.1   55.2
-## # ... with 23,811 more rows
-\end{verbatim}
+\begin{tabular}{r|l|l|l|r|r}
+\hline
+acci\_id & acci\_time & Incident\_type & severity & acci\_x & acci\_y\\
+\hline
+3545008155 & 2019-06-10 11:59:50 & حادث دهس امراة & بليغ & 25.28002 & 55.35302\\
+\hline
+3545009716 & 2019-06-10 12:04:19 & حادث صدم رصيف & بسيط & 25.25702 & 55.29077\\
+\hline
+3545011689 & 2019-06-10 12:09:48 & حادث صدم جدار & بسيط & 25.17389 & 55.40356\\
+\hline
+3545013868 & 2019-06-10 12:18:18 & حادث ضد مجهول & بسيط & 25.26867 & 55.32277\\
+\hline
+3544995157 & 2019-06-10 11:22:00 & حادث اصطدام بين سيارتين & بسيط & 25.26062 & 55.31896\\
+\hline
+3545003866 & 2019-06-10 11:47:55 & حادث صدم جدار & بسيط & 25.08618 & 55.40152\\
+\hline
+\end{tabular}
 
 Now, it is possible to explore the relationships between the severity of the incidents and other variables. By increasing the coverage of the data, there are much more insights that can be gathered than before.
 

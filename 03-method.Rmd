@@ -70,7 +70,7 @@ In this dataset, we could've added more coverage by covering the severity of the
 
 ```{r, message=FALSE, warning=FALSE}
 workfile <- workfile %>% separate(acci_name, c("Incident_type", "severity"), sep = "- |-")
-workfile
+kable(head(workfile))
 ```
 
 Now, it is possible to explore the relationships between the severity of the incidents and other variables. By increasing the coverage of the data, there are much more insights that can be gathered than before.

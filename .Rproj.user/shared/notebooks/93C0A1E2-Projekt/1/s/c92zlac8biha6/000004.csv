@@ -1,4 +1,0 @@
-"0","df <- df %>% left_join(indexlegend)"
-"2","Joining, by = c(""severity"", ""severity_ID"")
-"
-"0","kable(head(df))"
