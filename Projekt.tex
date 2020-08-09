@@ -290,19 +290,19 @@ It can be seen that more than half of the entries have no dates. This is a huge 
 ## 13             NA     1
 \end{verbatim}
 
-All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable.
+All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident tickets is a solution that is currently being implemented by Dubai Police, and this solution is effective in insuring the reliablity of data because the data automatically registers the exact date and time of an incident.
 
 \hypertarget{coverage}{%
 \section{Coverage}\label{coverage}}
 
-Coverage can be thought of as how much information the data \textbf{\emph{can}} give you. The amount of data that a dataset includes is affected by several factors, including the feasibility of data collection and relevance.
+Coverage can be thought of as how much information the data \textbf{\emph{can}} give. The amount of data that a dataset includes is affected by several factors, including the feasibility of data collection and relevance.
 
 \hypertarget{using-technology-to-cover-more-data}{%
 \subsection{Using Technology to Cover More Data}\label{using-technology-to-cover-more-data}}
 
-In our case, modern technology could have been used to collect much more data, and the collected data could cover a lot of other variables such as the road features(bridge, junction, intersection, etc.), weather conditions (foggy, rainy, etc.), and much more. For example, Dubai Police receives traffic incidents via their mobile app. Meaning that the whole data collection process can be automated, including automatically obtaining the weather conditions on that day through the AccuWeather API, and the road features on the provided coordinates, which could be done through OpenStreetMap for example.
+In this case, modern technology could have been used to collect much more data, and the collected data could cover a lot of other variables such as the road features(bridge, junction, intersection, etc.), weather conditions (foggy, rainy, etc.), and much more. For example, Dubai Police receives traffic incidents that are submuitted via a mobile app. Meaning that the whole data collection process can be automated, including automatically obtaining the weather conditions on that day through the API's such as Accuweather, and the road features on the provided coordinates, which could be done through OpenStreetMap for example.
 
-In this dataset, we could've added more coverage by covering the severity of the incidents. We were able to do that by splitting the \texttt{acci\_type} into two columns: \texttt{Incident\_type} and \texttt{severity}.
+In this dataset, It is possible to increase the coverage by adding a new variable, the severity of the incidents. Because the severity of the incidents is entered with the accident type. So, by splitting the \texttt{acci\_type} into two columns: \texttt{Incident\_type} and \texttt{severity}, it is possible to determine the severity of the incidents and further explore the variable.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -334,7 +334,7 @@ Now, it is possible to explore the relationships between the severity of the inc
 \hypertarget{consistency}{%
 \section{Consistency}\label{consistency}}
 
-This is a very simple aspect, but is quite often overlooked. Having specific guidelines and standards to follow when collecting and using data is important to have consistent results. For example, if we collect data but with different variables next year, it can be difficult to track and compare changes between now and then. Therefore, a solid framework that allows for consistent results is important to maximize the usefulness of the data.
+This is a very simple aspect, but is quite often overlooked. Having specific guidelines and standards to follow when collecting and using data is important to have consistent results. For example, if the data is collected but with different variables next year, it can be difficult to track and compare changes between now and then. Therefore, a solid framework that allows for both consistent results and the improvement of data quality is important to maximize the usefulness of the data.
 
 \hypertarget{foundations}{%
 \chapter{Foundations}\label{foundations}}
@@ -342,7 +342,7 @@ This is a very simple aspect, but is quite often overlooked. Having specific gui
 \hypertarget{standards}{%
 \section{Standards}\label{standards}}
 
-Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where we had to create the two columns \texttt{Incident\_type} and \texttt{severity} from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it helps us better identify nominal data, as well as adding a common key for future purposes, such as translation. In this case, we added an ID for severity, in case we would like to manipulate the data later on.
+Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where one column was split into the two columns \texttt{Incident\_type} and \texttt{severity} from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it makes identifying nominal data much easier, as well as adding a common key for future purposes, such as translation. In this case, and ID for severity was added, in case a user would like to manipulate the data later on.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -376,17 +376,17 @@ acci\_id & acci\_time & Incident\_type & severity & acci\_x & acci\_y & severity
 \hypertarget{making-the-most-out-of-things}{%
 \section{Making the Most out of Things}\label{making-the-most-out-of-things}}
 
-Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, I would would use the packages \texttt{httr} and \texttt{JSONlite} to import data from various API's such as OpenStreetMap and AccuWeather, and add the data to new variables such as \texttt{weather\_condition} and \texttt{road\_feature}. I would use the given coordinates to add road features and assign it to a new variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, I'm able to increase coverage massively.
+Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, using the packages \texttt{httr} and \texttt{JSONlite} to import data from various API's such as OpenStreetMap and AccuWeather, and dd the data to new variables such as \texttt{weather\_condition} and \texttt{road\_feature}. The given coordinates can be used also to add road features and assign it to another variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, it has increased the dataset's coverage massively, making it significantly more valuable.
 
 \hypertarget{maximizing-the-effectiveness-of-data}{%
 \section{Maximizing the effectiveness of data}\label{maximizing-the-effectiveness-of-data}}
 
-By setting better standards, and trying to make the most out of what is provided, we were able to maximize the effectiveness of data. Because of that, our data has become much more useful than it has been initially.
+By setting better standards, and trying to make the most out of what is provided, the effectiveness of data has been maximized. Because of that, the data has become much more useful than it has been initially.
 
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}
 
-Thank you for reading. All of the code used here is my own personal work. I hope you have a better understanding about how important public data is, and how better data can help improve insights significantly.
+Thank you for reading this document. All of the code used here is my own personal work. I hope I was able to help you better understand about how important quality data is, and how better data and some creativity can help improve insights significantly.
 
   \bibliography{book.bib,packages.bib}
 
