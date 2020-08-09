@@ -21,8 +21,8 @@ This project is a personal initiative of how setting better standards can help u
 
 With the advancements in data technologies, the prevalence of data has skyrocketed in recent years. Due to this, the availability of data has increased significantly. 
 
-> There are 2.5 quintillion bytes of data created every day— 
-> which is why you need IBM Cloud Object Storage
+> "There are 2.5 quintillion bytes of data created every day— 
+> which is why you need IBM Cloud Object Storage"
 >
 > --- an IBM Advertisement.
 
