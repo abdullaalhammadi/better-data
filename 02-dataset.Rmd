@@ -1,8 +1,13 @@
 # The Dataset
 
+
+## The Case
+
+The case at hand is an example of public data that is available on [Bayanat.ae](https://bayanat.ae). It is a dataset that includes data about traffic incidents that were reported to the Dubai Police operation contact center. This is the dataset that will be used to look for insights on how to improve road safety. The following pages will explain why this dataset was chosen, and how it is a good example for the ideas that will be mentioned in the following chapters.
+
 ## Why this dataset?
 
-I chose this data set specifically because it covers most of the ideas that I will bring up. Do note that this dataset is **not** a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
+This dataset was chosen specifically because it covers most of the ideas that will be brought up. Do note that this dataset is **not** a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
 
 ## What will be covered?
 
@@ -17,4 +22,4 @@ The ideas that will be covered are:
 - Making the most of what is available
 - Maximizing the effectiveness of data
 
-These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of positive thought process when working with such tasks. In the coming chapters, I will go further into detail regarding the ideas listed above.
+These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of a positive thought process when working with such tasks. The coming chapters will go further into detail regarding the ideas listed above.

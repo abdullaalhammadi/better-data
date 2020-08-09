@@ -128,20 +128,34 @@
 \hypertarget{the-purpose}{%
 \section{The Purpose}\label{the-purpose}}
 
-I created this project as a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, we will look into developing the standards for collecting public data, and how to make the most with what we currently have to create better insights. In this case, for public policy.
+This project is a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, the task will be to look into developing the standards for collecting public data, and how to make the most with what is available currently have to create better insights. In this case, for public policy.
 
-\hypertarget{the-case}{%
-\section{The Case}\label{the-case}}
+\hypertarget{abstract}{%
+\section{Abstract}\label{abstract}}
 
-The case at hand is an example of public data that is available on \href{https://bayanat.ae}{Bayanat.ae}. It is a dataset that includes data about traffic incidents that were reported to the Dubai Police operation contact center. We will be using this dataset to look for insights on how to improve road safety. In the following pages, I will explain why I chose this dataset and how it is a good example for the ideas that will be mentioned in the following chapters.
+With the advancements in data technologies, the prevalence of data has skyrocketed in recent years. Due to this, the availability of data has increased significantly.
+
+\begin{quote}
+There are 2.5 quintillion bytes of data created every day---
+which is why you need IBM Cloud Object Storage
+
+--- an IBM Advertisement.
+\end{quote}
+
+That is a large amount of data, but the IBM Cloud Object Storage is not needed because most of that data is probably random back-end logs or cat videos. In any case, most of the data available may not be useful, usable data. This document will go through the importance of developing standards and criteria for the processes of gathering, entering, and handling of data for the purpose of developing high quality datasets to provide valuable and beneficial results.
 
 \hypertarget{the-dataset}{%
 \chapter{The Dataset}\label{the-dataset}}
 
+\hypertarget{the-case}{%
+\section{The Case}\label{the-case}}
+
+The case at hand is an example of public data that is available on \href{https://bayanat.ae}{Bayanat.ae}. It is a dataset that includes data about traffic incidents that were reported to the Dubai Police operation contact center. This is the dataset that will be used to look for insights on how to improve road safety. The following pages will explain why this dataset was chosen, and how it is a good example for the ideas that will be mentioned in the following chapters.
+
 \hypertarget{why-this-dataset}{%
 \section{Why this dataset?}\label{why-this-dataset}}
 
-I chose this data set specifically because it covers most of the ideas that I will bring up. Do note that this dataset is \textbf{not} a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
+This dataset was chosen specifically because it covers most of the ideas that will be brought up. Do note that this dataset is \textbf{not} a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
 
 \hypertarget{what-will-be-covered}{%
 \section{What will be covered?}\label{what-will-be-covered}}
@@ -172,17 +186,17 @@ The ideas that will be covered are:
   Maximizing the effectiveness of data
 \end{itemize}
 
-These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of positive thought process when working with such tasks. In the coming chapters, I will go further into detail regarding the ideas listed above.
+These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of a positive thought process when working with such tasks. The coming chapters will go further into detail regarding the ideas listed above.
 
 \hypertarget{the-key-aspects-of-data}{%
 \chapter{The Key Aspects of Data}\label{the-key-aspects-of-data}}
 
-In this chapter, I will explain why these aspects of data are crucial to providing good results.
+This chapter will explain why these aspects of data are crucial to providing good results.
 
 \hypertarget{relevance}{%
 \section{Relevance}\label{relevance}}
 
-Relevance in this context is essentially how fitting the data is with your current goals. For example, in our case, the data is relevant because we are looking to explore the data to find any interesting relationships or occurrences that may help us come up with solutions or insights to improve road safety. This is the data we currently have.
+Relevance in this context is essentially how fitting the data is with a tasks set targets or goals. For example in this case, the data is relevant because the task at hand is to explore the data to find any interesting relationships or occurrences that may help with providing solutions or insights to improve road safety. This is a glimpse of the dataset.
 
 \begin{tabular}{r|l|l|r|r}
 \hline
@@ -202,12 +216,16 @@ acci\_id & acci\_time & acci\_name & acci\_x & acci\_y\\
 \hline
 \end{tabular}
 
-In our case, the data is relevant because we are working with what is available and not asking certain questions or setting specific goals by ourselves. To ensure that data is relevant, the entities that collect and provide the data should know what the users of the data are looking for. Collecting random data that may or may not be useful is not an effective way of providing data, since the efforts and resources used to gather and provide such data may be fruitless.
+In this case, the data is relevant because task provides enough flexibility to work with what is available and not asking certain questions or setting specific goals. To ensure that data is relevant, the entities that collect and provide the data should know what the users of the data are looking for. Collecting random data that may or may not be useful is not an effective way of providing data, since the efforts and resources used to gather and provide such data may be fruitless. A good example of ensuring that data is relevant is this hypothetical scenario:
+
+\begin{quote}
+a person, X, is tasked with gathering data for the ABC Corp.~annual performance report. Instead of collecting all the data that is possible, X decides to make the most out of his time by ensuring that the data that is intends to collect is relevant. So X meets with the committee that will be writing the report, and asks them what data is needed to come up with the metrics required for a proper report that is valuable for stakeholders. By doing this, X has saved valuable time and effort as well as being much more productive than just blindly collecting data, in the hopes that the data may be relevant for the use case.
+\end{quote}
 
 \hypertarget{reliability}{%
 \section{Reliability}\label{reliability}}
 
-Reliability is how much can the data be trusted to provide accurate and meaningful results. In our case for example, the data passed the initial reliability test, which is tests the integrity of the data. I wrote my own script to determine whether there were any inconsistencies between the cells.
+Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which is tests the integrity of the data. This is script is used to determine whether there were any inconsistencies between the cells.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -225,7 +243,7 @@ Reliability is how much can the data be trusted to provide accurate and meaningf
 \end{Highlighting}
 \end{Shaded}
 
-This is a script that checks that each entry has a unique ID, which ensures that there are no duplicate entries or mismatched entries. However, the data proved to be unreliable because when we checked the completeness of the data, this is what we can see:
+This is a script that checks that each entry has a unique ID, which ensures that there are no duplicate entries or mismatched entries. However, the data proved to be unreliable because when the verifying the completeness of the data, this is what can be seen:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -241,7 +259,7 @@ This is a script that checks that each entry has a unique ID, which ensures that
 ## 2 TRUE                  13743
 \end{verbatim}
 
-We can see that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, we could have used a weather API to get the weather conditions on the dates, and see the effect that the weather conditions might have on road safety. Also there is another interesting observation.
+It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. Also there is another interesting observation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -272,7 +290,7 @@ We can see that more than half of the entries have no dates. This is a huge prob
 ## 13             NA     1
 \end{verbatim}
 
-We can see that the that all the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable.
+All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable.
 
 \hypertarget{coverage}{%
 \section{Coverage}\label{coverage}}
