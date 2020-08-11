@@ -113,7 +113,7 @@
 
 \title{Maximizing The Effectiveness of Data}
 \author{Abdulla Alhammadi \textbar{} عبدالله الحمادي}
-\date{2020-08-09}
+\date{2020-08-11}
 
 \begin{document}
 \maketitle
@@ -128,7 +128,7 @@
 \hypertarget{the-purpose}{%
 \section{The Purpose}\label{the-purpose}}
 
-\textbf{This project is a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, the task will be to look into developing the standards for collecting public data, and how to make the most with what is available currently have to create better insights. In this case, for public policy.}
+This project is a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, the task will be to look into developing the standards for collecting public data, and how to make the most with what is available currently have to create better insights. In this case, for public policy.
 
 \hypertarget{abstract}{%
 \section{Abstract}\label{abstract}}
@@ -142,7 +142,7 @@ which is why you need IBM Cloud Object Storage''
 --- an IBM Advertisement.
 \end{quote}
 
-That is indeed an impressively large amount of data, but the IBM Cloud Object Storage is not actually needed because it is very likely that most of the data is probably random back-end logs or cat videos. In any case, most of the data available may not be useful, usable data. This document will go through the importance of developing standards and criteria for the processes of gathering, entering, and handling of data for the purpose of developing high quality datasets to provide valuable and beneficial results.
+That is indeed an impressively large amount of data, but the IBM Cloud Object Storage is not actually needed because it is very likely that most of the data is probably random back-end logs or videos of cats. In any case, most of the data available may not be useful, usable data. This document will go through the importance of developing standards and criteria for the processes of gathering, entering, and handling of data for the purpose of developing high quality datasets to provide valuable and beneficial results.
 
 \hypertarget{the-dataset}{%
 \chapter{The Dataset}\label{the-dataset}}
@@ -155,7 +155,7 @@ The case at hand is an example of public data that is available on \href{https:/
 \hypertarget{why-this-dataset}{%
 \section{Why this dataset?}\label{why-this-dataset}}
 
-This dataset was chosen specifically because it covers most of the ideas that will be brought up. Do note that this dataset is \textbf{not} a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
+This dataset was chosen specifically because it covers most of the ideas that will be brought up. Additionally, the dataset is a fair representation of the state of public data. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
 
 \hypertarget{what-will-be-covered}{%
 \section{What will be covered?}\label{what-will-be-covered}}
@@ -221,7 +221,7 @@ a person, X, is tasked with gathering data for the ABC Corp.~annual performance 
 \hypertarget{reliability}{%
 \section{Reliability}\label{reliability}}
 
-Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which is tests the integrity of the data. This is script is used to determine whether there were any inconsistencies between the cells.
+Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which tests the integrity of the data. This script is used to determine whether there were any inconsistencies between the cells.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -255,7 +255,7 @@ This is a script that checks that each entry has a unique ID, which ensures that
 ## 2 TRUE                  13743
 \end{verbatim}
 
-It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. Also there is another interesting observation.
+It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. There is another interesting observation.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -286,7 +286,7 @@ It can be seen that more than half of the entries have no dates. This is a huge 
 ## 13             NA     1
 \end{verbatim}
 
-All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident tickets is a solution that is currently being implemented by Dubai Police, and this solution is effective in ensuring the reliablity of data because the data automatically registers the exact date and time of an incident.
+All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis useless. These issues when combined make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident reports is a solution that is currently being implemented by Dubai Police, and this solution is effective in ensuring the reliability of data because the data automatically registers the exact date and time of an incident.
 
 \hypertarget{coverage}{%
 \section{Coverage}\label{coverage}}
@@ -338,7 +338,7 @@ This is a very simple aspect, but is quite often overlooked. Having specific gui
 \hypertarget{standards}{%
 \section{Standards}\label{standards}}
 
-Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where one column was split into the two columns \texttt{Incident\_type} and \texttt{severity} from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it makes identifying nominal data much easier, as well as adding a common key for future purposes, such as translation. In this case, and ID for severity was added, in case a user would like to manipulate the data later on.
+Setting standards for data collection is vital for providing equal access to a wide variety of users as well as a wide variety of applications. Specific standards that are to be followed in the data collection process are essential to creating a robust foundation that makes data much more impactful. For example, setting standards for the key aspects of data can make sure that the results are consistent as well as reproducible for many other applications. In this dataset, setting standards for data entry could have made the dataset less difficult to work with, as it can be seen from the instance where one column was split into the two columns \texttt{Incident\_type} and \texttt{severity} from the previous chapter because the two scopes of data were coerced into one variable, which had to be adjusted to become useful. Another standard, such as adding indexes, is very helpful because it makes identifying nominal data much easier, as well as adding a common key for future purposes, such as translation. In this case, an ID for severity was added. This would allow a user to manipulate the data later on.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -372,7 +372,7 @@ acci\_id & acci\_time & Incident\_type & severity & acci\_x & acci\_y & severity
 \hypertarget{making-the-most-out-of-things}{%
 \section{Making the Most out of Things}\label{making-the-most-out-of-things}}
 
-Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, using the packages \texttt{httr} and \texttt{JSONlite} to import data from various API's such as OpenStreetMap and AccuWeather, and dd the data to new variables such as \texttt{weather\_condition} and \texttt{road\_feature}. The given coordinates can be used also to add road features and assign it to another variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, it has increased the dataset's coverage massively, making it significantly more valuable.
+Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, using the packages \texttt{httr} and \texttt{JSONlite} to import data from various API's such as OpenStreetMap and AccuWeather, and add the data to new variables such as \texttt{weather\_condition} and \texttt{road\_feature}. The given coordinates can be used also to add road features and assign it to another variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, it has increased the dataset's coverage massively, making it significantly more valuable.
 
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}

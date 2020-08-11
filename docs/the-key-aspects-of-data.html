@@ -24,7 +24,7 @@
 <meta name="author" content="Abdulla Alhammadi | عبدالله الحمادي" />
 
 
-<meta name="date" content="2020-08-09" />
+<meta name="date" content="2020-08-11" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -250,7 +250,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="reliability" class="section level2">
 <h2><span class="header-section-number">3.2</span> Reliability</h2>
-<p>Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which is tests the integrity of the data. This is script is used to determine whether there were any inconsistencies between the cells.</p>
+<p>Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which tests the integrity of the data. This script is used to determine whether there were any inconsistencies between the cells.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="the-key-aspects-of-data.html#cb1-1"></a>check_doubles &lt;-<span class="st"> </span><span class="cf">function</span>(x){</span>
 <span id="cb1-2"><a href="the-key-aspects-of-data.html#cb1-2"></a></span>
 <span id="cb1-3"><a href="the-key-aspects-of-data.html#cb1-3"></a>  x &lt;-<span class="st"> </span>x <span class="op">%&gt;%</span><span class="st"> </span></span>
@@ -269,7 +269,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ##   &lt;lgl&gt;                 &lt;int&gt;
 ## 1 FALSE                 10078
 ## 2 TRUE                  13743</code></pre>
-<p>It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. Also there is another interesting observation.</p>
+<p>It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. There is another interesting observation.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="the-key-aspects-of-data.html#cb4-1"></a>workfile <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">mutate</span>(<span class="dt">incident_date =</span> <span class="kw">date</span>(acci_time)) <span class="op">%&gt;%</span></span>
 <span id="cb4-2"><a href="the-key-aspects-of-data.html#cb4-2"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">incident_day =</span> <span class="kw">day</span>(acci_time), <span class="dt">Incident_month =</span> <span class="kw">month</span>(acci_time)) <span class="op">%&gt;%</span></span>
 <span id="cb4-3"><a href="the-key-aspects-of-data.html#cb4-3"></a><span class="st">    </span><span class="kw">group_by</span>(Incident_month) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">count</span>(incident_day) <span class="op">%&gt;%</span></span>
@@ -291,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 11             11     3
 ## 12             12     3
 ## 13             NA     1</code></pre>
-<p>All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis’ useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident tickets is a solution that is currently being implemented by Dubai Police, and this solution is effective in ensuring the reliablity of data because the data automatically registers the exact date and time of an incident.</p>
+<p>All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis useless. These issues when combined make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident reports is a solution that is currently being implemented by Dubai Police, and this solution is effective in ensuring the reliability of data because the data automatically registers the exact date and time of an incident.</p>
 </div>
 <div id="coverage" class="section level2">
 <h2><span class="header-section-number">3.3</span> Coverage</h2>
