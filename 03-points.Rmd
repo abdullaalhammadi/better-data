@@ -1,10 +1,8 @@
 # The Key Aspects of Data
 
-This chapter will explain why these aspects of data are crucial to providing good results.
-
 ## Relevance
 
-Relevance in this context is essentially how fitting the data is with a tasks set targets or goals. For example in this case, the data is relevant because the task at hand is to explore the data to find any interesting relationships or occurrences that may help with providing solutions or insights to improve road safety. This is a glimpse of the dataset.
+Relevance in this context is essentially how fitting the data is with a task's set targets. For example in this case, the data is relevant because the task at hand is to explore the data to find any interesting relationships or occurrences that may help with providing solutions or insights to improve road safety. This is a glimpse of the dataset.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE, results='hide'}
 Sys.setlocale("LC_CTYPE","arabic")
@@ -25,7 +23,7 @@ In this case, the data is relevant because task provides enough flexibility to w
 
 ## Reliability
 
-Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which is tests the integrity of the data. This is script is used to determine whether there were any inconsistencies between the cells.
+Reliability is how much can the data be trusted to provide accurate and meaningful results. In this case for example, the data passed the initial reliability test, which tests the integrity of the data. This script is used to determine whether there were any inconsistencies between the cells.
 ```{r, echo=TRUE}
 check_doubles <- function(x){
 
@@ -49,7 +47,7 @@ library(tidyverse)
 workfile %>% mutate(date = date(acci_time)) %>% count(is.na(date) == TRUE)
 ```
 
-It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. Also there is another interesting observation.
+It can be seen that more than half of the entries have no dates. This is a huge problem because dates can provide a lot of insights that is now very difficult to obtain. For example, a weather API could have been used to get the weather conditions on the dates, and study the effect that the weather conditions might have on road safety. There is another interesting observation.
 ```{r, echo=TRUE}
 workfile %>% mutate(incident_date = date(acci_time)) %>%
     mutate(incident_day = day(acci_time), Incident_month = month(acci_time)) %>%
@@ -57,9 +55,9 @@ workfile %>% mutate(incident_date = date(acci_time)) %>%
     count(Incident_month)
 ```
 
-All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident tickets is a solution that is currently being implemented by Dubai Police, and this solution is effective in insuring the reliablity of data because the data automatically registers the exact date and time of an incident.
+All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis useless. These issues when combined make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident reports is a solution that is currently being implemented by Dubai Police, and this solution is effective in ensuring the reliability of data because the data automatically registers the exact date and time of an incident.
 
-## Coverage
+## Coverage   
 
 Coverage can be thought of as how much information the data **_can_** give. The amount of data that a dataset includes is affected by several factors, including the feasibility of data collection and relevance.
 

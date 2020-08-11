@@ -7,7 +7,7 @@ The case at hand is an example of public data that is available on [Bayanat.ae](
 
 ## Why this dataset?
 
-This dataset was chosen specifically because it covers most of the ideas that will be brought up. Do note that this dataset is **not** a cherry-picked one, but it offers a lot to work with. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
+This dataset was chosen specifically because it covers most of the ideas that will be brought up. Additionally, the dataset is a fair representation of the state of public data. This dataset provides a wide variety of types of observations (date and time, geographical data, nominal data, ordinal data, etc.) as well as a lot of room for improvement and utilization.
 
 ## What will be covered?
 
@@ -20,6 +20,5 @@ The ideas that will be covered are:
     - Consistency
 - Setting the right standards
 - Making the most of what is available
-- Maximizing the effectiveness of data
 
 These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of a positive thought process when working with such tasks. The coming chapters will go further into detail regarding the ideas listed above.

@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Better Data and Better Results},
+  pdftitle={Maximizing The Effectiveness of Data},
   pdfauthor={Abdulla Alhammadi \textbar{} عبدالله الحمادي},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -111,7 +111,7 @@
 \usepackage[]{natbib}
 \bibliographystyle{apalike}
 
-\title{Better Data and Better Results}
+\title{Maximizing The Effectiveness of Data}
 \author{Abdulla Alhammadi \textbar{} عبدالله الحمادي}
 \date{2020-08-09}
 
@@ -128,7 +128,7 @@
 \hypertarget{the-purpose}{%
 \section{The Purpose}\label{the-purpose}}
 
-This project is a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, the task will be to look into developing the standards for collecting public data, and how to make the most with what is available currently have to create better insights. In this case, for public policy.
+\textbf{This project is a personal initiative of how setting better standards can help utilize modern technology to better collect and analyze data for specific applications, as well as how to make the most out of public data. In this case, the task will be to look into developing the standards for collecting public data, and how to make the most with what is available currently have to create better insights. In this case, for public policy.}
 
 \hypertarget{abstract}{%
 \section{Abstract}\label{abstract}}
@@ -182,8 +182,6 @@ The ideas that will be covered are:
   Setting the right standards
 \item
   Making the most of what is available
-\item
-  Maximizing the effectiveness of data
 \end{itemize}
 
 These are not the definitive and final points that make or break datasets, but more of a general guideline of best practices and a grasp of a positive thought process when working with such tasks. The coming chapters will go further into detail regarding the ideas listed above.
@@ -191,12 +189,10 @@ These are not the definitive and final points that make or break datasets, but m
 \hypertarget{the-key-aspects-of-data}{%
 \chapter{The Key Aspects of Data}\label{the-key-aspects-of-data}}
 
-This chapter will explain why these aspects of data are crucial to providing good results.
-
 \hypertarget{relevance}{%
 \section{Relevance}\label{relevance}}
 
-Relevance in this context is essentially how fitting the data is with a tasks set targets or goals. For example in this case, the data is relevant because the task at hand is to explore the data to find any interesting relationships or occurrences that may help with providing solutions or insights to improve road safety. This is a glimpse of the dataset.
+Relevance in this context is essentially how fitting the data is with a task's set targets. For example in this case, the data is relevant because the task at hand is to explore the data to find any interesting relationships or occurrences that may help with providing solutions or insights to improve road safety. This is a glimpse of the dataset.
 
 \begin{tabular}{r|l|l|r|r}
 \hline
@@ -290,7 +286,7 @@ It can be seen that more than half of the entries have no dates. This is a huge 
 ## 13             NA     1
 \end{verbatim}
 
-All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident tickets is a solution that is currently being implemented by Dubai Police, and this solution is effective in insuring the reliablity of data because the data automatically registers the exact date and time of an incident.
+All the data collected is only from 3 to 4 days from each month. Whether this was an error or not, this can pose a lot of problems when exploring the data, and it is enough of a problem to make a lot of analysis' useless. All of these errors all in all make the dataset unreliable. Yes, it is still possible to explore the data and possibly come up with conclusions, but these conclusions will have a very poor basis, making the results from the conclusion unreliable. A possible solution is automating the whole data collection process to reduce the possibility of collecting faulty data. Using a mobile app to submit incident tickets is a solution that is currently being implemented by Dubai Police, and this solution is effective in ensuring the reliablity of data because the data automatically registers the exact date and time of an incident.
 
 \hypertarget{coverage}{%
 \section{Coverage}\label{coverage}}
@@ -377,11 +373,6 @@ acci\_id & acci\_time & Incident\_type & severity & acci\_x & acci\_y & severity
 \section{Making the Most out of Things}\label{making-the-most-out-of-things}}
 
 Sometimes, there is only so much that can be done regarding problems in datasets. In such circumstances, it is important to make the most of what is available. In this case, using the packages \texttt{httr} and \texttt{JSONlite} to import data from various API's such as OpenStreetMap and AccuWeather, and dd the data to new variables such as \texttt{weather\_condition} and \texttt{road\_feature}. The given coordinates can be used also to add road features and assign it to another variable, or use the dates provided to get the weather on a given date and add it to the data. By doing these things, it has increased the dataset's coverage massively, making it significantly more valuable.
-
-\hypertarget{maximizing-the-effectiveness-of-data}{%
-\section{Maximizing the effectiveness of data}\label{maximizing-the-effectiveness-of-data}}
-
-By setting better standards, and trying to make the most out of what is provided, the effectiveness of data has been maximized. Because of that, the data has become much more useful than it has been initially.
 
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}
